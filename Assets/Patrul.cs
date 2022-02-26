@@ -11,33 +11,36 @@ public class Patrul : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
     private NavMeshAgent agent;
-    
-    void Start ()
+    public Transform player;
+    Vector2 patrolVector;
+
+    void Start()
     {
         randomSpot = Random.Range(0, moveSpots.Length);
         waitTime = startWaitTime;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        patrolVector = moveSpots[randomSpot].position;
+        agent.SetDestination(patrolVector);
     }
-    
+
     void Update()
     {
-        // agent.SetDestination(player.position);
-
-        agent.SetDestination(moveSpots[randomSpot].position);
-        if (transform.position == moveSpots[randomSpot].position) 
+        Vector2 pos = transform.position;
+        if (Vector2.Distance(pos, patrolVector) < 0.1f)
         {
             if (waitTime <= 0)
             {
                 randomSpot = Random.Range(0, moveSpots.Length);
                 waitTime = startWaitTime;
+                patrolVector = moveSpots[randomSpot].position;
+                agent.SetDestination(patrolVector);
             }
             else
             {
                 waitTime -= Time.deltaTime;
             }
         }
-
     }
 }
