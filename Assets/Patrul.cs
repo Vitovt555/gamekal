@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Patrul : MonoBehaviour
 {
@@ -9,17 +10,23 @@ public class Patrul : MonoBehaviour
     private int randomSpot;
     private float waitTime;
     public float startWaitTime;
+    private NavMeshAgent agent;
     
     void Start ()
     {
         randomSpot = Random.Range(0, moveSpots.Length);
         waitTime = startWaitTime;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
     
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-        if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+        // agent.SetDestination(player.position);
+
+        agent.SetDestination(moveSpots[randomSpot].position);
+        if (transform.position == moveSpots[randomSpot].position) 
         {
             if (waitTime <= 0)
             {

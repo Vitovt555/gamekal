@@ -6,15 +6,15 @@ public class Weopon : MonoBehaviour
 {
     public Transform gun;
     public GameObject bullet;
-   
+    public AudioSource ShootSound;   
 
     void Update()
 
     {
-      // gun.transform.position=new Vector2(0,-1);
      if (Input.GetButtonDown("Fire1"))
      {
         Shoot(); 
+        ShootSound.Play();
      }
      
     }

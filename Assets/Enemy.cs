@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     public int health = 6;
@@ -11,21 +12,20 @@ public class Enemy : MonoBehaviour
     public float DetectionDistance;
     private float timeBtwShots;
     public float startTimeBtwShots;
-    // UnityEngine.AI.NavMeshAgent agent;
+    
     private Rigidbody2D rb;
     public GameObject projectile;
     private Transform player;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots; 
+        
 
-        // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        // agent.UpdateRotation = false;
-        // agent.Update.UpAxis = false;
-
+     
     }
     void Update()
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2591842572829580172}
   - component: {fileID: 2591842572829580179}
   - component: {fileID: 2591842572829580177}
-  - component: {fileID: 2591842572829580176}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Enemy
@@ -164,21 +163,3 @@ PolygonCollider2D:
       - {x: 0.16, y: -0.42}
       - {x: 0.16, y: -0.64}
       - {x: 0.28, y: -0.64}
---- !u!114 &2591842572829580176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2591842572829580183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c60ed5d8324dd442b92130d76cbbea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 6
-  stoppingdistance: 1
-  speed: 2
-  retreatDistance: 0
-  startTimeBtwShots: 66
-  projectile: {fileID: 6834789150324388443, guid: 09df3f2d5d9f32649ae51f2a45168bbb, type: 3}
