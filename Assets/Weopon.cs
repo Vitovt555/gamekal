@@ -11,6 +11,8 @@ public class Weopon : MonoBehaviour
     void Update()
 
     {
+      // Vector3 difference = Camera.ScreenTowordoint(Input.mousePosition) - transform.position;
+      // float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
      if (Input.GetButtonDown("Fire1"))
      {
         Shoot(); 

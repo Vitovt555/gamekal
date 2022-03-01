@@ -25,35 +25,36 @@ public class Menu : MonoBehaviour
                 }
             }
         }
-        void Pause()
+    }
+        public void Pause()
         {
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPause = true;
             AudioListener.pause = true;
         }
-        void Resume()
+        public void Resume()
         {
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             GameIsPause = false;
             AudioListener.pause = false;
         }
-        //  void LoadMenu()
-        // {
-        //     Debug.Log("Load");
-        //     Time.timeScale = 1f;
-        //     SceneManager.LoadScene("Menu");
-        // }
-        //  void QuitGame()
-        // {
-        //     Debug.Log("Quit");
-        //     Application.Quit();
-        // }
-        //  void Settings()
-        // {
-        //     Debug.Log("Settings");
-        //     Application.LoadScene("Settings");
-        // }
-    }
+        private void LoadMenu()
+        {
+            Debug.Log("Load");
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Menu");
+        }
+        public void QuitGame()
+        {
+            Debug.Log("Quit");
+            Application.Quit();
+        }
+        public void Settings()
+        {
+            Debug.Log("Settings");
+            // Application.LoadScene("Settings");
+        }
+    
 }

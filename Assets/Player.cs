@@ -13,12 +13,14 @@ public class Player : MonoBehaviour
         
         step = GetComponent<Rigidbody2D>();
         step.freezeRotation = true;
+        
     }
 
      void Update()
     {
        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
        moveVelocity = moveInput.normalized*speed; 
+      
     }
     void FixedUpdate()
     {
@@ -35,5 +37,9 @@ public class Player : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        Time.timeScale = 0;
+        
     }
+  
+    
 }
